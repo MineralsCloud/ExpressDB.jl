@@ -4,6 +4,7 @@ authors = ["singularitti <singularitti@outlook.com> and contributors"]
 version = "0.1.0"
 
 [deps]
+ChemicalFormula = "069161ab-964a-4228-89a0-7a676f2e1f46"
 ExpressBase = "6bf22d12-b2e3-4e51-8f6d-9d050a32c5d5"
 UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
