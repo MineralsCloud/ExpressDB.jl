@@ -1,17 +1,18 @@
 module ExpressDB
 
+using ChemicalFormula: Formula
+using CrystallographyBase: Cell
 using ExpressBase: Calculation, SelfConsistentField
 using UUIDs: UUID
 
 abstract type Data end
-struct Material <: Data
+struct Crystal <: Data
     id::UUID
-    formula::String
+    formula::Formula
     structure::Cell
-    pointgroup::Int
-    spacegroup::Int
-    nsites::Int
-    phase::String
+    pointgroup::String
+    spacegroup::UInt16
+    nsites::UInt64
 end
 
 end
