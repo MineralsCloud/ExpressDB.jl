@@ -10,14 +10,55 @@ julia&gt; Pkg.add(&quot;ExpressDB&quot;)</code></pre></li><li><p>Run</p><pre><co
   No Changes to `~/work/ExpressDB.jl/ExpressDB.jl/docs/build/developers/Manifest.toml`</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; pkg&quot;add https://github.com/MineralsCloud/ExpressDB.jl&quot;</code><code class="nohighlight hljs ansi" style="display:block;">┌ Warning: The Pkg REPL mode is intended for interactive use only, and should not be used from scripts. It is recommended to use the functional API instead.
 └ @ Pkg.REPLMode /cache/build/default-amdci4-2/julialang/julia-release-1-dot-8/usr/share/julia/stdlib/v1.8/Pkg/src/REPLMode/REPLMode.jl:379
      Cloning git-repo `https://github.com/MineralsCloud/ExpressDB.jl`
-Username for &#39;https://github.com&#39;: ERROR: failed to clone from https://github.com/MineralsCloud/ExpressDB.jl, error: GitError(Code:EUSER, Class:Callback, Aborting, user cancelled credential request.)</code></pre><p>in the second step above.</p><h2 id="Update-ExpressDB"><a class="docs-heading-anchor" href="#Update-ExpressDB">Update <code>ExpressDB</code></a><a id="Update-ExpressDB-1"></a><a class="docs-heading-anchor-permalink" href="#Update-ExpressDB" title="Permalink"></a></h2><p>Please <a href="https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository">watch</a> our <a href="https://github.com/MineralsCloud/ExpressDB.jl">GitHub repository</a> for new releases. Once we release a new version, you can update <code>ExpressDB</code> by typing</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; using Pkg</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; Pkg.update(&quot;ExpressDB&quot;)</code><code class="nohighlight hljs ansi" style="display:block;">    Updating registry at `~/.julia/registries/General`
+    Updating git-repo `https://github.com/MineralsCloud/ExpressDB.jl`
+   Resolving package versions...
+    Updating `~/work/ExpressDB.jl/ExpressDB.jl/docs/build/developers/Project.toml`
+  [18b0655d] + ExpressDB v0.1.0 `https://github.com/MineralsCloud/ExpressDB.jl#main`
+    Updating `~/work/ExpressDB.jl/ExpressDB.jl/docs/build/developers/Manifest.toml`
+  [ec485272] + ArnoldiMethod v0.2.0
+  [069161ab] + ChemicalFormula v0.1.0
+  [a33af91c] + CompositionsBase v0.1.1
+  [187b0558] + ConstructionBase v1.4.1
+  [93b1d1cd] + CrystallographyBase v0.10.0
+  [db8ca866] + EasyJobsBase v0.4.0
+  [4e289a0a] + EnumX v1.0.4
+  [e2ba6199] + ExprTools v0.1.8
+  [6bf22d12] + ExpressBase v0.4.0
+  [18b0655d] + ExpressDB v0.1.0 `https://github.com/MineralsCloud/ExpressDB.jl#main`
+  [d9f16b24] + Functors v0.4.2
+  [86223c79] + Graphs v1.7.4
+  [d25df0c9] + Inflate v0.1.3
+  [692b3bcd] + JLLWrappers v1.4.1
+  [1914dd2f] + MacroTools v0.5.10
+  [c116f080] + Mendeleev v0.3.0
+  [699a6c99] + SimpleTraits v0.9.4
+  [6a97d125] + SimpleWorkflows v0.23.0
+  [90137ffa] + StaticArrays v1.5.12
+  [1e83bf80] + StaticArraysCore v1.4.0
+  [69024149] + StringEncodings v0.3.6
+  [6ec83bb0] + StructEquality v2.1.0
+  [410a4b4d] + Tricks v0.1.6
+  [1986cc42] + Unitful v1.12.2
+  [a7773ee8] + UnitfulAtomic v1.0.0
+  [0625e100] + ValSplit v0.1.0
+  [ddb6d928] + YAML v0.4.8
+  [94ce4f54] + Libiconv_jll v1.16.1+2
+  [8ba89e20] + Distributed
+  [1a1011a3] + SharedArrays
+  [2f01184e] + SparseArrays
+  [10745b16] + Statistics
+Precompiling project...
+<span class="sgr33">  ✓ </span>ExpressDB
+  1 dependency successfully precompiled in 2 seconds. 47 already precompiled.
+  <span class="sgr33">1</span> dependency precompiled but a different version is currently loaded. Restart julia to access the new version</code></pre><p>in the second step above.</p><h2 id="Update-ExpressDB"><a class="docs-heading-anchor" href="#Update-ExpressDB">Update <code>ExpressDB</code></a><a id="Update-ExpressDB-1"></a><a class="docs-heading-anchor-permalink" href="#Update-ExpressDB" title="Permalink"></a></h2><p>Please <a href="https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository">watch</a> our <a href="https://github.com/MineralsCloud/ExpressDB.jl">GitHub repository</a> for new releases. Once we release a new version, you can update <code>ExpressDB</code> by typing</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; using Pkg</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; Pkg.update(&quot;ExpressDB&quot;)</code><code class="nohighlight hljs ansi" style="display:block;">    Updating registry at `~/.julia/registries/General`
     Updating git-repo `https://github.com/JuliaRegistries/General.git`
-ERROR: The following package names could not be resolved:
- * ExpressDB (not found in project or manifest)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; Pkg.gc()</code><code class="nohighlight hljs ansi" style="display:block;">      Active manifest files: 4 found
+    Updating git-repo `https://github.com/MineralsCloud/ExpressDB.jl`
+  No Changes to `~/work/ExpressDB.jl/ExpressDB.jl/docs/build/developers/Project.toml`
+  No Changes to `~/work/ExpressDB.jl/ExpressDB.jl/docs/build/developers/Manifest.toml`</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; Pkg.gc()</code><code class="nohighlight hljs ansi" style="display:block;">      Active manifest files: 4 found
       Active artifact files: 1 found
       Active scratchspaces: 0 found
      Deleted no artifacts, repos, packages or scratchspaces</code></pre><p>in the Julia REPL.</p><h2 id="Uninstall-and-reinstall-ExpressDB"><a class="docs-heading-anchor" href="#Uninstall-and-reinstall-ExpressDB">Uninstall and reinstall <code>ExpressDB</code></a><a id="Uninstall-and-reinstall-ExpressDB-1"></a><a class="docs-heading-anchor-permalink" href="#Uninstall-and-reinstall-ExpressDB" title="Permalink"></a></h2><p>Sometimes errors may occur if the package is not properly installed. In this case, you may want to uninstall and reinstall the package. Here is how to do that:</p><ol><li><p>To uninstall, in a Julia session, run</p><pre><code class="language-julia-repl hljs">julia&gt; using Pkg
 
 julia&gt; Pkg.rm(&quot;ExpressDB&quot;)
 
-julia&gt; Pkg.gc()</code></pre></li><li><p>Press <code>ctrl+d</code> to quit the current session. Start a new Julia session and reinstall <code>ExpressDB</code>.</p></li></ol></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Wednesday 11 January 2023 00:24">Wednesday 11 January 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+julia&gt; Pkg.gc()</code></pre></li><li><p>Press <code>ctrl+d</code> to quit the current session. Start a new Julia session and reinstall <code>ExpressDB</code>.</p></li></ol></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Tuesday 31 January 2023 23:26">Tuesday 31 January 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

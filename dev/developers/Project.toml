@@ -1,2 +1,3 @@
 [deps]
+ExpressDB = "18b0655d-4a43-4d76-9339-669ee99a06f5"
 JuliaFormatter = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
