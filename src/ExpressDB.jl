@@ -5,6 +5,8 @@ using CrystallographyBase: Cell, MonkhorstPackGrid
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
+export Crystal, SimpleScfData
+
 abstract type Data end
 abstract type MaterialsData <: Data end
 struct Crystal <: MaterialsData
