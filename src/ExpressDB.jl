@@ -5,7 +5,7 @@ using CrystallographyBase: Cell, MonkhorstPackGrid
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
-export Crystal, SimpleScfData
+export Crystal, SimpleScf
 
 abstract type Data end
 abstract type MaterialsData <: Data end
@@ -18,7 +18,7 @@ struct Crystal <: MaterialsData
     nsites::UInt64
 end
 abstract type CalculationData <: Data end
-struct SimpleScfData <: CalculationData
+struct SimpleScf <: CalculationData
     id::UUID
     ecutwfc::Number
     kmesh::MonkhorstPackGrid
