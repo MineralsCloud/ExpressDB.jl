@@ -25,5 +25,10 @@ struct SimpleScf <: CalculationData
     xc::ExchangeCorrelationFunctional
     pseudization::Pseudization
 end
+struct PhononDos <: CalculationData
+    id::UUID
+    qmesh::MonkhorstPackGrid
+    dosmesh::MonkhorstPackGrid
+end
 
 end
