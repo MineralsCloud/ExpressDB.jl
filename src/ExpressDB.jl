@@ -2,6 +2,7 @@ module ExpressDB
 
 using ChemicalFormula: Formula
 using CrystallographyBase: Cell, MonkhorstPackGrid
+using EquationsOfStateOfSolids: EquationOfStateOfSolids
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
@@ -24,6 +25,10 @@ struct SimpleScf <: CalculationData
     kmesh::MonkhorstPackGrid
     xc::ExchangeCorrelationFunctional
     pseudization::Pseudization
+end
+struct EosFitting <: CalculationData
+    input_eos::EquationOfStateOfSolids
+    final_eos::EquationOfStateOfSolids
 end
 struct PhononDos <: CalculationData
     id::UUID
