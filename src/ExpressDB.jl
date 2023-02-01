@@ -6,7 +6,7 @@ using EquationsOfStateOfSolids: EquationOfStateOfSolids
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
-export Crystal, SimpleScf
+export Crystal, SimpleScf, EosFitting, PhononDos
 
 abstract type Data end
 abstract type MaterialsData <: Data end
