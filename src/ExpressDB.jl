@@ -6,7 +6,8 @@ using ExpressBase: Calculation, SelfConsistentField
 using UUIDs: UUID
 
 abstract type Data end
-struct Crystal <: Data
+abstract type MaterialsData <: Data end
+struct Crystal <: MaterialsData
     id::UUID
     formula::Formula
     structure::Cell
