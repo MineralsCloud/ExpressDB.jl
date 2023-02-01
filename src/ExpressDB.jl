@@ -19,6 +19,7 @@ struct Crystal <: MaterialsData
 end
 abstract type CalculationData <: Data end
 struct SimpleScfData <: CalculationData
+    id::UUID
     ecutwfc::Number
     kmesh::MonkhorstPackGrid
     xc::ExchangeCorrelationFunctional
