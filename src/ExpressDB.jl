@@ -1,8 +1,8 @@
 module ExpressDB
 
 using ChemicalFormula: Formula
-using CrystallographyBase: Cell
-using ExpressBase: Calculation, SelfConsistentField
+using CrystallographyBase: Cell, MonkhorstPackGrid
+using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
 abstract type Data end
@@ -16,5 +16,11 @@ struct Crystal <: MaterialsData
     nsites::UInt64
 end
 abstract type CalculationData <: Data end
+struct SimpleScfData <: CalculationData
+    ecutwfc::Number
+    kmesh::MonkhorstPackGrid
+    xc::ExchangeCorrelationFunctional
+    pseudization::Pseudization
+end
 
 end
