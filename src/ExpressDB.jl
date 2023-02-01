@@ -15,5 +15,6 @@ struct Crystal <: MaterialsData
     spacegroup::UInt16
     nsites::UInt64
 end
+abstract type CalculationData <: Data end
 
 end
