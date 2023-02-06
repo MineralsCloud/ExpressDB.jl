@@ -5,9 +5,12 @@ version = "0.1.0"
 
 [deps]
 ChemicalFormula = "069161ab-964a-4228-89a0-7a676f2e1f46"
+Configurations = "5218b696-f38b-4ac9-8b61-a12ec717816d"
 CrystallographyBase = "93b1d1cd-a8ea-4aa5-adb1-b2407ea0ba8d"
 EquationsOfStateOfSolids = "1eaa2786-f833-4167-8397-974edad0881e"
 ExpressBase = "6bf22d12-b2e3-4e51-8f6d-9d050a32c5d5"
+FileTrees = "72696420-646e-6120-6e77-6f6420746567"
+Glob = "c27321d9-0574-5035-807b-f59d2c89b15c"
 Pseudopotentials = "1b2dc2e6-48aa-4f00-b8f4-19d1a71d7a0e"
 UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
