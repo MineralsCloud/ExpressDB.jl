@@ -21,7 +21,7 @@ function listfiles(patterns::Pair, root_dir=pwd())
         end
         files
     end
-    return Tuple(io)
+    return first(io) .=> last(io)
 end
 
 materialize(config::ExpressFileTree) =
