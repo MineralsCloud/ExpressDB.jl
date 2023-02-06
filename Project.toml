@@ -19,6 +19,7 @@ ChemicalFormula = "0.1"
 CrystallographyBase = "0.7, 0.10"
 EquationsOfStateOfSolids = "0.4"
 ExpressBase = "0.4"
+Glob = "1"
 Pseudopotentials = "0.8"
 julia = "1"
 
