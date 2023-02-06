@@ -10,9 +10,9 @@ import Configurations: from_dict
 
 abstract type SearchRule end
 @option "simple" struct SimpleRule <: SearchRule
-    root_dir::String
     input_pattern::GlobMatch
     output_pattern::GlobMatch
+    root_dir::String = pwd()
 end
 
 function listfiles(patterns::Pair, root_dir=pwd())
