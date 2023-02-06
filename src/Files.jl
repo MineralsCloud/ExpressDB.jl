@@ -1,15 +1,17 @@
 # module Files
 
-export listfiles
+export listfiles, ExpressFileTree
 
-using Configurations: @option
+using Configurations: OptionField, @option
 using FileTrees: FileTree, mapsubtrees, path
 using Glob: GlobMatch
 
+import Configurations: from_dict
+
 @option struct ExpressFileTree
     root_dir::String
-    input_pattern::Union{String,Regex,GlobMatch}
-    output_pattern::Union{String,Regex,GlobMatch}
+    input_pattern::GlobMatch
+    output_pattern::GlobMatch
 end
 
 function listfiles(patterns::Pair, root_dir=pwd())
@@ -26,5 +28,10 @@ end
 
 materialize(config::ExpressFileTree) =
     listfiles(config.input_pattern => config.output_pattern, config.root_dir)
+
+from_dict(::Type{ExpressFileTree}, ::OptionField{:input_pattern}, ::Type{GlobMatch}, str) =
+    GlobMatch(str)
+from_dict(::Type{ExpressFileTree}, ::OptionField{:output_pattern}, ::Type{GlobMatch}, str) =
+    GlobMatch(str)
 
 # end
