@@ -1,6 +1,6 @@
 # module Files
 
-export listfiles, ExpressFileTree
+export listfiles, SimpleRule
 
 using Configurations: OptionField, @option
 using FileTrees: FileTree, mapsubtrees, path
@@ -8,7 +8,8 @@ using Glob: GlobMatch
 
 import Configurations: from_dict
 
-@option struct ExpressFileTree
+abstract type SearchRule end
+@option "simple" struct SimpleRule <: SearchRule
     root_dir::String
     input_pattern::GlobMatch
     output_pattern::GlobMatch
@@ -26,12 +27,12 @@ function listfiles(patterns::Pair, root_dir=pwd())
     return first(io) .=> last(io)
 end
 
-materialize(config::ExpressFileTree) =
+materialize(config::SimpleRule) =
     listfiles(config.input_pattern => config.output_pattern, config.root_dir)
 
-from_dict(::Type{ExpressFileTree}, ::OptionField{:input_pattern}, ::Type{GlobMatch}, str) =
+from_dict(::Type{SimpleRule}, ::OptionField{:input_pattern}, ::Type{GlobMatch}, str) =
     GlobMatch(str)
-from_dict(::Type{ExpressFileTree}, ::OptionField{:output_pattern}, ::Type{GlobMatch}, str) =
+from_dict(::Type{SimpleRule}, ::OptionField{:output_pattern}, ::Type{GlobMatch}, str) =
     GlobMatch(str)
 
 # end
