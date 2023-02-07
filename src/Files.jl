@@ -1,6 +1,6 @@
 # module Files
 
-export listfiles, SimpleRule
+export listfiles, readby
 
 using Configurations: OptionField, @option
 using FileTrees: FileTree, mapsubtrees, path
@@ -25,6 +25,16 @@ function listfiles(patterns::Pair, root_dir=pwd())
         files
     end
     return first(io) .=> last(io)
+end
+
+function readby(files, parsers::Pair)
+    parsers = (parser === nothing ? identity : parser for parser in parsers)
+    input_parser, output_parser = parsers
+    return map(files) do (input, output)
+        str₁, str₂ = read(input, String), read(output, String)
+        in, out = input_parser(str₁), output_parser(str₂)
+        in => out
+    end
 end
 
 materialize(config::SimpleRule) =
