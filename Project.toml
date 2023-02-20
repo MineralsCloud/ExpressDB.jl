@@ -15,13 +15,13 @@ Pseudopotentials = "1b2dc2e6-48aa-4f00-b8f4-19d1a71d7a0e"
 UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
 
 [compat]
-ChemicalFormula = "0.1"
+ChemicalFormula = "0.1, 0.2"
 Configurations = "0.17"
 CrystallographyBase = "0.7, 0.10"
 EquationsOfStateOfSolids = "0.4"
 ExpressBase = "0.4"
-Glob = "1"
 FileTrees = "0.3"
+Glob = "1"
 Pseudopotentials = "0.8"
 julia = "1"
 
