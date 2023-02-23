@@ -25,8 +25,9 @@ struct ScfSettings <: CalculationSettings
     pseudization::Pseudization
 end
 struct EosFittingSettings <: CalculationSettings
+    scf::ScfSettings
+    pressures::Vector{<:Number}
     init_params::EquationOfStateOfSolidsParameters
-    final_params::EquationOfStateOfSolidsParameters
 end
 struct VDosSettings <: CalculationSettings
     id::UUID
