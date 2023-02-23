@@ -15,7 +15,7 @@ abstract type SearchRule end
     root_dir::String = pwd()
 end
 
-function listfiles(patterns::Pair, root_dir=pwd())
+function listfiles(patterns::Pair{GlobMatch,GlobMatch}, root_dir=pwd())
     tree = FileTree(expanduser(root_dir))
     io = map(patterns) do pattern
         files = String[]
@@ -26,6 +26,8 @@ function listfiles(patterns::Pair, root_dir=pwd())
     end
     return first(io) .=> last(io)
 end
+listfiles(patterns::Pair{<:AbstractString,<:AbstractString}, args...) =
+    listfiles(GlobMatch(first(patterns)) => GlobMatch(last(patterns)), args...)
 
 function readby(files, parsers::Pair)
     parsers = (parser === nothing ? identity : parser for parser in parsers)
