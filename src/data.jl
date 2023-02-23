@@ -7,9 +7,12 @@ using UUIDs: UUID
 export Crystal, ScfSettings, EosFittingSettings, VDosSettings
 
 abstract type Data end
+struct UniqueData{T<:Data} <: Data
+    id::UUID
+    data::T
+end
 abstract type MaterialsData <: Data end
 struct Crystal <: MaterialsData
-    id::UUID
     formula::Formula
     structure::Cell
     pointgroup::String
@@ -18,7 +21,6 @@ struct Crystal <: MaterialsData
 end
 abstract type CalculationSettings <: Data end
 struct ScfSettings <: CalculationSettings
-    id::UUID
     ecutwfc::Number
     kmesh::MonkhorstPackGrid
     xc::ExchangeCorrelationFunctional
@@ -30,7 +32,6 @@ struct EosFittingSettings <: CalculationSettings
     init_params::EquationOfStateOfSolidsParameters
 end
 struct VDosSettings <: CalculationSettings
-    id::UUID
     qmesh::MonkhorstPackGrid
     dosmesh::MonkhorstPackGrid
 end
