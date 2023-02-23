@@ -35,7 +35,9 @@ struct VDosSettings <: CalculationSettings
     qmesh::MonkhorstPackGrid
     dosmesh::MonkhorstPackGrid
 end
-struct Calculation <: Data
+abstract type CalculationOutput <: Data end
+mutable struct Calculation <: Data
     material::Material
     settings::CalculationSettings
+    output::CalculationOutput
 end
