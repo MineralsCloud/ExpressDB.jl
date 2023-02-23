@@ -11,8 +11,8 @@ struct UniqueData{T<:Data} <: Data
     id::UUID
     data::T
 end
-abstract type MaterialsData <: Data end
-struct Crystal <: MaterialsData
+abstract type Material <: Data end
+struct Crystal <: Material
     formula::Formula
     structure::Cell
     pointgroup::String
