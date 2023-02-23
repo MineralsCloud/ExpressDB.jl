@@ -4,6 +4,8 @@ using EquationsOfStateOfSolids: Parameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
+import DataFrames: DataFrame
+
 export UniqueData, Crystal, ScfSettings, EosFittingSettings, VDosSettings, Calculation
 
 abstract type Data end
@@ -40,4 +42,8 @@ mutable struct Calculation <: Data
     material::Material
     settings::CalculationSettings
     output::CalculationOutput
+end
+
+function DataFrame(data::Data)
+    return DataFrame(Dict(f => getfield(data, f) for f in propertynames(data)))
 end
