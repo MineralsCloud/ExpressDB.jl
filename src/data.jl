@@ -2,7 +2,7 @@ using ChemicalFormula: Formula
 using CrystallographyBase: Cell, MonkhorstPackGrid
 using EquationsOfStateOfSolids: Parameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
-using UUIDs: UUID
+using UUIDs: UUID, uuid4
 
 import DataFrames: DataFrame
 
@@ -13,6 +13,7 @@ struct UniqueData{T<:Data} <: Data
     id::UUID
     data::T
 end
+UniqueData(data::Data) = UniqueData(uuid4(), data)
 abstract type Material <: Data end
 struct Crystal <: Material
     formula::Formula
