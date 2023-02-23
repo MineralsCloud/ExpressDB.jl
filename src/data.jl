@@ -4,7 +4,7 @@ using EquationsOfStateOfSolids: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
-export Crystal, SimpleScf, EosFitting, PhononDos
+export Crystal, ScfSettings, EosFittingSettings, VDosSettings
 
 abstract type Data end
 abstract type MaterialsData <: Data end
@@ -16,19 +16,19 @@ struct Crystal <: MaterialsData
     spacegroup::UInt16
     nsites::UInt64
 end
-abstract type CalculationData <: Data end
-struct SimpleScf <: CalculationData
+abstract type CalculationSettings <: Data end
+struct ScfSettings <: CalculationSettings
     id::UUID
     ecutwfc::Number
     kmesh::MonkhorstPackGrid
     xc::ExchangeCorrelationFunctional
     pseudization::Pseudization
 end
-struct EosFitting <: CalculationData
+struct EosFittingSettings <: CalculationSettings
     init_params::EquationOfStateOfSolidsParameters
     final_params::EquationOfStateOfSolidsParameters
 end
-struct PhononDos <: CalculationData
+struct VDosSettings <: CalculationSettings
     id::UUID
     qmesh::MonkhorstPackGrid
     dosmesh::MonkhorstPackGrid
