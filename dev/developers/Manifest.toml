@@ -114,9 +114,9 @@ version = "0.17.4"
 
 [[deps.ConstructionBase]]
 deps = ["LinearAlgebra"]
-git-tree-sha1 = "fb21ddd70a051d882a1686a5a550990bbe371a95"
+git-tree-sha1 = "45269494fcfa0cc14032b7aa640fa71320e1976e"
 uuid = "187b0558-2788-49d3-abe0-74a17ed4e7c9"
-version = "1.4.1"
+version = "1.5.0"
 
 [[deps.ContextVariablesX]]
 deps = ["Compat", "Logging", "UUIDs"]
@@ -180,9 +180,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[deps.Distributions]]
 deps = ["ChainRulesCore", "DensityInterface", "FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns", "Test"]
-git-tree-sha1 = "9258430c176319dc882efa4088e2ff882a0cb1f1"
+git-tree-sha1 = "239fe7c3312050992dcc5d5a8d54abcf099c3ff2"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.25.81"
+version = "0.25.82"
 
 [[deps.DocStringExtensions]]
 deps = ["LibGit2"]
@@ -230,13 +230,13 @@ version = "0.1.8"
 
 [[deps.ExpressBase]]
 deps = ["CompositionsBase", "JSON", "SimpleWorkflows", "TOML", "ValSplit", "YAML"]
-git-tree-sha1 = "e7de4583da21fb7fc3e27436b248731d9f742cac"
+git-tree-sha1 = "a8275eefc93f522ba4bebf131616dcae7a59a000"
 uuid = "6bf22d12-b2e3-4e51-8f6d-9d050a32c5d5"
-version = "0.4.0"
+version = "0.4.1"
 
 [[deps.ExpressDB]]
-deps = ["ChemicalFormula", "Configurations", "CrystallographyBase", "EquationsOfStateOfSolids", "ExpressBase", "FileTrees", "Glob", "Pseudopotentials", "UUIDs"]
-git-tree-sha1 = "19e197d39eab896b460b4db807840c2e159db878"
+deps = ["ChemicalFormula", "Configurations", "CrystallographyBase", "Dates", "EquationsOfStateOfSolids", "ExpressBase", "FileTrees", "Glob", "Pseudopotentials", "UUIDs"]
+git-tree-sha1 = "9de9bda51ed867daf510613ceb2b75373050f58f"
 repo-rev = "main"
 repo-url = "https://github.com/MineralsCloud/ExpressDB.jl"
 uuid = "18b0655d-4a43-4d76-9339-669ee99a06f5"
