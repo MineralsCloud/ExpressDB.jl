@@ -1,6 +1,6 @@
 using ChemicalFormula: Formula
 using CrystallographyBase: Cell, MonkhorstPackGrid
-using EquationsOfStateOfSolids: EquationOfStateOfSolids
+using EquationsOfStateOfSolids: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID
 
@@ -25,8 +25,8 @@ struct SimpleScf <: CalculationData
     pseudization::Pseudization
 end
 struct EosFitting <: CalculationData
-    input_eos::EquationOfStateOfSolids
-    final_eos::EquationOfStateOfSolids
+    init_params::EquationOfStateOfSolidsParameters
+    final_params::EquationOfStateOfSolidsParameters
 end
 struct PhononDos <: CalculationData
     id::UUID
