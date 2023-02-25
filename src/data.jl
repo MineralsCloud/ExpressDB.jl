@@ -1,6 +1,6 @@
 using ChemicalFormula: Formula
 using CrystallographyBase: Cell, MonkhorstPackGrid
-using EquationsOfStateOfSolids: Parameters
+using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID, uuid4
 
@@ -32,7 +32,7 @@ end
 struct EosFittingSettings <: CalculationSettings
     scf::ScfSettings
     pressures::Vector{<:Number}
-    init_params::Parameters
+    init_params::EquationOfStateOfSolidsParameters
 end
 struct VDosSettings <: CalculationSettings
     qmesh::MonkhorstPackGrid
