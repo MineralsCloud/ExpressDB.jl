@@ -31,7 +31,7 @@ struct ScfSettings <: CalculationSettings
 end
 struct EosFittingSettings <: CalculationSettings
     scf::ScfSettings
-    pressures::Vector{<:Number}
+    pressures::Vector
     init_params::EquationOfStateOfSolidsParameters
 end
 struct VDosSettings <: CalculationSettings
