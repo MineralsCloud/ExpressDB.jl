@@ -2,7 +2,7 @@ using ChemicalFormula: Formula, unicode
 using CrystallographyBase: Cell, MonkhorstPackGrid, cellvolume
 using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
-using Query: @map, @from, @unique
+using Query: @from, @unique
 using UUIDs: UUID, uuid4
 
 export UniqueData, Crystal, ScfSettings, EosFittingSettings, VDosSettings, Calculation
@@ -46,12 +46,14 @@ mutable struct Calculation <: Data
 end
 
 function maketable(data::AbstractVector{Crystal})
-    return data |> @map {
-        formula = unicode(_.formula),
-        volume = cellvolume(_.structure),
-        _.pointgroup,
-        spacegroup = Int16(_.spacegroup),
-    }
+    return @from datum in data begin
+        @select {
+            formula = unicode(datum.formula),
+            volume = cellvolume(datum.structure),
+            datum.pointgroup,
+            spacegroup = Int16(datum.spacegroup),
+        }
+    end
 end
 function maketable(data::AbstractVector{ScfSettings})
     return @from datum in data begin
