@@ -2,11 +2,11 @@ using ChemicalFormula: Formula
 using CrystallographyBase: Cell, MonkhorstPackGrid
 using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
+using Query: @map
 using UUIDs: UUID, uuid4
 
-import DataFrames: DataFrame
-
 export UniqueData, Crystal, ScfSettings, EosFittingSettings, VDosSettings, Calculation
+export maketable
 
 abstract type Data end
 struct UniqueData{T<:Data} <: Data
@@ -45,6 +45,7 @@ mutable struct Calculation <: Data
     output::CalculationOutput
 end
 
-function DataFrame(data::Data)
-    return DataFrame(Dict(f => getfield(data, f) for f in propertynames(data)))
+function maketable(data::AbstractVector{Crystal})
+    return data |>
+           @map {zip(fieldnames(Crystal), getfield(_, f) for f in fieldnames(Crystal))...}
 end
