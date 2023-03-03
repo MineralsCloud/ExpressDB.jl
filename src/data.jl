@@ -1,5 +1,5 @@
-using ChemicalFormula: Formula
-using CrystallographyBase: Cell, MonkhorstPackGrid
+using ChemicalFormula: Formula, unicode
+using CrystallographyBase: Cell, MonkhorstPackGrid, cellvolume
 using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using Query: @map
@@ -46,6 +46,10 @@ mutable struct Calculation <: Data
 end
 
 function maketable(data::AbstractVector{Crystal})
-    return data |>
-           @map {zip(fieldnames(Crystal), getfield(_, f) for f in fieldnames(Crystal))...}
+    return data |> @map {
+        formula = unicode(_.formula),
+        volume = cellvolume(_.structure),
+        _.pointgroup,
+        spacegroup = Int16(_.spacegroup),
+    }
 end
