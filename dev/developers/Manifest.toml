@@ -188,7 +188,7 @@ version = "0.4.1"
 
 [[deps.ExpressDB]]
 deps = ["ChemicalFormula", "Configurations", "CrystallographyBase", "DataFrames", "Dates", "EquationsOfState", "ExpressBase", "FileTrees", "Glob", "Pseudopotentials", "UUIDs"]
-git-tree-sha1 = "3a44186b183968a3da58074aa8c1fe9734fcb7e2"
+git-tree-sha1 = "fc208298ebcc9b39c0318b3fd771c47c05eb0ac3"
 repo-rev = "main"
 repo-url = "https://github.com/MineralsCloud/ExpressDB.jl"
 uuid = "18b0655d-4a43-4d76-9339-669ee99a06f5"
