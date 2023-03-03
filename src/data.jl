@@ -2,7 +2,7 @@ using ChemicalFormula: Formula, unicode
 using CrystallographyBase: Cell, MonkhorstPackGrid, cellvolume
 using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
-using Query: @map
+using Query: @map, @from, @unique
 using UUIDs: UUID, uuid4
 
 export UniqueData, Crystal, ScfSettings, EosFittingSettings, VDosSettings, Calculation
@@ -52,4 +52,30 @@ function maketable(data::AbstractVector{Crystal})
         _.pointgroup,
         spacegroup = Int16(_.spacegroup),
     }
+end
+function maketable(data::AbstractVector{ScfSettings})
+    return @from datum in data begin
+        @let kmesh = datum.kmesh
+        @select {
+            datum.ecutwfc,
+            grid = Int.(kmesh.mesh),
+            shift = Int.(kmesh.isdatumshift),
+            datum.xc,
+            datum.pseudization,
+        }
+    end
+end
+function maketable(data::AbstractVector{EosFittingSettings})
+    t = @from datum in data begin
+        @from pressure in datum.pressures
+        @let scf = datum.scf
+        @select {
+            pressure,
+            grid = Int.(scf.kmesh.mesh),
+            shift = Int.(scf.kmesh.is_shift),
+            scf.xc,
+            scf.pseudization,
+        }
+    end
+    return t |> @unique()
 end
