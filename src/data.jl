@@ -4,8 +4,6 @@ using EquationsOfState: EquationOfStateOfSolidsParameters
 using Pseudopotentials: ExchangeCorrelationFunctional, Pseudization
 using UUIDs: UUID, uuid4
 
-import DataFrames: DataFrame
-
 export UniqueData, Crystal, ScfSettings, EosFittingSettings, VDosSettings, Calculation
 
 abstract type Data end
@@ -31,7 +29,7 @@ struct ScfSettings <: CalculationSettings
 end
 struct EosFittingSettings <: CalculationSettings
     scf::ScfSettings
-    pressures::Vector{<:Number}
+    pressures::Vector
     init_params::EquationOfStateOfSolidsParameters
 end
 struct VDosSettings <: CalculationSettings
@@ -43,8 +41,4 @@ mutable struct Calculation <: Data
     material::Material
     settings::CalculationSettings
     output::CalculationOutput
-end
-
-function DataFrame(data::Data)
-    return DataFrame(Dict(f => getfield(data, f) for f in propertynames(data)))
 end
