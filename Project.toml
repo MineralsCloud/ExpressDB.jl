@@ -25,6 +25,7 @@ ExpressBase = "0.4"
 FileTrees = "0.3"
 Glob = "1"
 Pseudopotentials = "0.8"
+Query = "1"
 julia = "1"
 
 [extras]
