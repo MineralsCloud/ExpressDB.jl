@@ -188,7 +188,7 @@ version = "0.4.1"
 
 [[deps.ExpressDB]]
 deps = ["ChemicalFormula", "Configurations", "CrystallographyBase", "Dates", "EquationsOfState", "ExpressBase", "FileTrees", "Glob", "Pseudopotentials", "Query", "UUIDs"]
-git-tree-sha1 = "cb3eed922c4db01d473bd4e1c200a73c868146f6"
+git-tree-sha1 = "15a4ec729953b8ce8a68a075168dcac4452150f3"
 repo-rev = "main"
 repo-url = "https://github.com/MineralsCloud/ExpressDB.jl"
 uuid = "18b0655d-4a43-4d76-9339-669ee99a06f5"
@@ -384,9 +384,9 @@ version = "1.4.1"
 
 [[deps.Parsers]]
 deps = ["Dates", "SnoopPrecompile"]
-git-tree-sha1 = "6f4fbcd1ad45905a5dee3f4256fabb49aa2110c6"
+git-tree-sha1 = "478ac6c952fddd4399e71d4779797c538d0ff2bf"
 uuid = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
-version = "2.5.7"
+version = "2.5.8"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
