@@ -10,3 +10,4 @@ function distance(x::AbstractDict, y::AbstractDict)
     end
     return sqrt(distance)
 end
+distance(x::Formula, y::Formula) = distance(x.composition, y.composition)
