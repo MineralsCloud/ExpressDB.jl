@@ -2,5 +2,5 @@ using ExpressDB
 using Test
 
 @testset "ExpressDB.jl" begin
-    # Write your tests here.
+    include("distances.jl")
 end
